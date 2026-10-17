@@ -1,0 +1,14 @@
+#!name=Spotify解锁
+#!desc=解锁 Premium 功能（原作者 ddgksf2013 维护版本）
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/Spotify.jpg
+#!tag=ddgksf2013
+#!version=2026-05-08
+#!author=@ddgksf2013
+
+[Script]
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/app2smile_spotify-qx-header.js, timeout=60, tag=spotify-qx-header
+http-response ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/app2smile_spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/app2smile_spotify-json.js, timeout=60, tag=spotify-json
+
+[MITM]
+hostname = spclient.wg.spotify.com, *spclient.spotify.com

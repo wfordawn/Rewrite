@@ -1,0 +1,22 @@
+#!name=淘票票净化
+#!desc=如果有需要的去除广告的APP，可自行在共享表格中添加需求
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/TaoPiaoPiaoAds.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2025-12-06
+
+[Rewrite]
+https://acs.m.taobao.com/gw/mtop.film.mtopadvertiseapi.queryloadingbanner response-body-json-jq '.data.returnValue={}'
+https://acs.m.taobao.com/gw/mtop.film.independentadvertiseapi.querypreloadadvertise response-body-json-jq '.data.returnValue=[]'
+https://acs.m.taobao.com/gw/mtop.film.mtopsearchapi.getranklistbytypeforsearch response-body-json-jq '.data.returnValue={}'
+https://acs.m.taobao.com/gw/mtop.film.mtopintegrationapi.homeconfig response-body-json-jq '.data.returnValue={}'
+https://acs.m.taobao.com/gw/mtop.film.mtopindependentadvertiseapi.queryadvertise response-body-json-jq '.data.returnValue=[]'
+https://acs.m.taobao.com/gw/mtop.film.life.aristotle.get response-body-json-jq '.data.nodes[]?.nodes |= map(select(.data.componentId | IN("tpp_banner_loop", "tpp_guess_like") | not))'
+https://acs.m.taobao.com/gw/mtop.film.life.popup.get response-body-json-jq '.data={}'
+https://acs.m.taobao.com/gw/mtop.film.mtopitemadvertiseapi.queryadvertise response-body-json-jq 'del(.data.returnValue)'
+
+[Script]
+http-response ^http:\/\/amdc\.m\.taobao\.com script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/amdc.js, requires-body=true, timeout=60, tag=amdc
+
+[MITM]
+hostname = acs.m.taobao.com

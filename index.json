@@ -1,0 +1,1228 @@
+{
+  "author": "ddgksf2013",
+  "upstream": "https://github.com/ddgksf2013/Rewrite",
+  "format": "Loon plugin (.lpx)",
+  "count": 66,
+  "plugins": [
+    {
+      "name": "开屏广告拦截合集",
+      "desc": "400+ 应用的开屏与应用内广告拦截，含穿山甲/优量汇/快手广告联盟处理",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/StartUpAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/StartUpAds.png",
+      "tag": "ddgksf2013",
+      "size": 59841,
+      "sections": [
+        "Rule(6)",
+        "Rewrite(453)",
+        "Script(44)",
+        "MITM(1)"
+      ],
+      "scripts": 44,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013, @app2smile",
+      "versionDate": "2026-08-29"
+    },
+    {
+      "name": "高德地图净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/AmapAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/AmapAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2977,
+      "sections": [
+        "Rule(1)",
+        "Rewrite(8)",
+        "Script(10)",
+        "MITM(1)"
+      ],
+      "scripts": 10,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-06"
+    },
+    {
+      "name": "微信小程序去除广告",
+      "desc": "去除广告、直接查看隐藏内容、净化弹窗",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Applet.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Applet.jpg",
+      "tag": "ddgksf2013",
+      "size": 1730,
+      "sections": [
+        "Rewrite(2)",
+        "Script(3)",
+        "MITM(1)"
+      ],
+      "scripts": 3,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2023-09-13"
+    },
+    {
+      "name": "哔哩哔哩漫画净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/BiliBiliComicsAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BiliBiliComicsAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 5006,
+      "sections": [
+        "Rewrite(20)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2026-06-14"
+    },
+    {
+      "name": "Bing首页简化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/BingSimplify.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BingSimplify.jpg",
+      "tag": "ddgksf2013",
+      "size": 741,
+      "sections": [
+        "Rewrite(3)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2023-12-18"
+    },
+    {
+      "name": "彩云天气净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/CaiYunAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/CaiYunAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2721,
+      "sections": [
+        "Rewrite(1)",
+        "Script(11)",
+        "MITM(1)"
+      ],
+      "scripts": 11,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2024-09-27"
+    },
+    {
+      "name": "菜鸟[菜鸟裹裹](支付宝小程序)净化",
+      "desc": "菜鸟[菜鸟裹裹](支付宝小程序)净化",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/CainiaoAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/CainiaoAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2351,
+      "sections": [
+        "Rewrite(8)",
+        "Script(5)",
+        "MITM(1)"
+      ],
+      "scripts": 5,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-10-07"
+    },
+    {
+      "name": "车来了(小程序)净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/CheLaiLeAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/CheLaiLeAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 1057,
+      "sections": [
+        "Rewrite(7)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-10-09"
+    },
+    {
+      "name": "中国联通净化",
+      "desc": "如果有需要的去除开屏广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/ChinaUnicomAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/ChinaUnicomAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 1421,
+      "sections": [
+        "Rule(1)",
+        "Rewrite(10)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-11"
+    },
+    {
+      "name": "IOS伪装影视APP净化",
+      "desc": "去广告配置（自用，持续更新...）",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/FakeiOSAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/FakeiOSAds.png",
+      "tag": "ddgksf2013",
+      "size": 539,
+      "sections": [
+        "Rewrite(2)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2025-10-26"
+    },
+    {
+      "name": "小黄鱼净化",
+      "desc": "如果有需要的去除开屏广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/GoofishAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/GoofishAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2395,
+      "sections": [
+        "Rule(1)",
+        "Rewrite(13)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-09-06"
+    },
+    {
+      "name": "Keep应用净化",
+      "desc": "应用界面简化、去除广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/KeepAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/KeepAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2210,
+      "sections": [
+        "Rewrite(14)",
+        "Script(3)",
+        "MITM(1)"
+      ],
+      "scripts": 3,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-03-26"
+    },
+    {
+      "name": "墨迹天气净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/MoJiWeatherAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/MoJiWeatherAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 871,
+      "sections": [
+        "Rule(1)",
+        "Rewrite(7)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-11-03"
+    },
+    {
+      "name": "网易云音乐净化",
+      "desc": "网易云音乐净化",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/NeteaseAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/NeteaseAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 6829,
+      "sections": [
+        "Rewrite(6)",
+        "Script(23)",
+        "MITM(1)"
+      ],
+      "scripts": 23,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-03-19"
+    },
+    {
+      "name": "网易邮箱大师净化",
+      "desc": "网易邮箱大师净化",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/NeteaseMailAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/NeteaseMailAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 1001,
+      "sections": [
+        "Rewrite(7)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-05-25"
+    },
+    {
+      "name": "汽水音乐净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/QiShuiMusicAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/QiShuiMusicAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 1317,
+      "sections": [
+        "Rewrite(11)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-09-26"
+    },
+    {
+      "name": "Reddit增强",
+      "desc": "去除Reddit信息流广告、帖子页面广告、帖子TreeAds、社区信息流广告，另去除信息流的NSFW图的遮罩，NSFW的帖子点击可直接查看图，伪装Premium，解锁会员图标",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/RedditAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/RedditAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 552,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-05-30"
+    },
+    {
+      "name": "什么值得买净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/SmzdmAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/SmzdmAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 3145,
+      "sections": [
+        "Rewrite(3)",
+        "Script(10)",
+        "MITM(1)"
+      ],
+      "scripts": 10,
+      "external": [],
+      "iconSource": "app",
+      "author": "blackmatrix7, @ddgksf2013",
+      "versionDate": "2024-08-12"
+    },
+    {
+      "name": "随手记净化+VIP",
+      "desc": "VIP",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/SuiShouJi.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/SuiShouJi.jpg",
+      "tag": "ddgksf2013",
+      "size": 1487,
+      "sections": [
+        "Rewrite(8)",
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-29"
+    },
+    {
+      "name": "淘票票净化",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/TaoPiaoPiaoAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TaoPiaoPiaoAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 1435,
+      "sections": [
+        "Rewrite(8)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-06"
+    },
+    {
+      "name": "百度贴吧净化",
+      "desc": "去开屏/推荐流/吧内列表/详情页/看图模式广告，屏蔽右下角悬浮广告与置顶广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/TieBaAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TieBaAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 2088,
+      "sections": [
+        "Rule(2)",
+        "Rewrite(6)",
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "app2smile, @ddgksf2013",
+      "versionDate": "2026-01-06",
+      "hasArgs": true
+    },
+    {
+      "name": "微信公众号去广告[已失效]",
+      "desc": "Block AD",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/WeChat.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/WeChat.jpg",
+      "tag": "ddgksf2013",
+      "size": 569,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-04-15"
+    },
+    {
+      "name": "微博&微博国际版净化",
+      "desc": "微博&微博国际版净化",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/WeiboAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/WeiboAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 7709,
+      "sections": [
+        "Rule(3)",
+        "Rewrite(17)",
+        "Script(25)",
+        "MITM(1)"
+      ],
+      "scripts": 25,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-09-16"
+    },
+    {
+      "name": "小红书净化+功能增强",
+      "desc": "功能增强",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/XiaoHongShuAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/XiaoHongShuAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 4610,
+      "sections": [
+        "Rewrite(8)",
+        "Script(16)",
+        "MITM(1)"
+      ],
+      "scripts": 16,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2026-01-31"
+    },
+    {
+      "name": "小宇宙FM去广告",
+      "desc": "如果有需要的去除广告的APP，可自行在共享表格中添加需求",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/XiaoYuZhouAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/XiaoYuZhouAds.jpg",
+      "tag": "ddgksf2013",
+      "size": 773,
+      "sections": [
+        "Rewrite(5)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-09-26"
+    },
+    {
+      "name": "喜马拉雅净化",
+      "desc": "去广告配置（自用，不定期更新）",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Ximalaya.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Ximalaya.jpg",
+      "tag": "ddgksf2013",
+      "size": 2636,
+      "sections": [
+        "Rewrite(19)",
+        "Script(5)",
+        "MITM(1)"
+      ],
+      "scripts": 5,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2024-04-13"
+    },
+    {
+      "name": "百度网盘净化",
+      "desc": "百度网盘净化",
+      "category": "Function",
+      "file": "Loon/Function/BaiduCloud.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BaiduCloud.jpg",
+      "tag": "ddgksf2013",
+      "size": 1603,
+      "sections": [
+        "Rewrite(7)",
+        "Script(4)",
+        "MITM(1)"
+      ],
+      "scripts": 4,
+      "external": [
+        "https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js"
+      ],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-29"
+    },
+    {
+      "name": "哔哩哔哩繁体CC字幕转中文简体",
+      "desc": "哔哩哔哩繁体CC字幕转中文简体",
+      "category": "Function",
+      "file": "Loon/Function/Bilibili_CC.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Bilibili_CC.jpg",
+      "tag": "ddgksf2013",
+      "size": 461,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2023-04-13"
+    },
+    {
+      "name": "Emby增强",
+      "desc": "Emby官方客户端内调用外部播放器，该功能需要自行添加Emby服域名的MITM",
+      "category": "Function",
+      "file": "Loon/Function/EmbyPlugin.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/EmbyPlugin.jpg",
+      "tag": "ddgksf2013",
+      "size": 1811,
+      "sections": [
+        "Script(6)",
+        "MITM(1)"
+      ],
+      "scripts": 6,
+      "external": [],
+      "iconSource": "app",
+      "author": "renzhipengBot 原创，@AppleArcade 魔改",
+      "versionDate": "2024-01-24"
+    },
+    {
+      "name": "ForceInstallTF",
+      "desc": "ForceInstallTF",
+      "category": "Function",
+      "file": "Loon/Function/ForceInstallTF.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/ForceInstallTF.jpg",
+      "tag": "ddgksf2013",
+      "size": 455,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "Skyxim",
+      "versionDate": "2022-03-12"
+    },
+    {
+      "name": "TFDownload",
+      "desc": "解决国区TF中无法下载某些应用（QX、小火箭、LOON）的问题",
+      "category": "Function",
+      "file": "Loon/Function/TFDownload.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TFDownload.jpg",
+      "tag": "ddgksf2013",
+      "size": 572,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "id77, Modified by Cuttlefish",
+      "versionDate": "2022-02-15"
+    },
+    {
+      "name": "UnblockURLinWeChat",
+      "desc": "UnblockURLinWeChat",
+      "category": "Function",
+      "file": "Loon/Function/UnblockURLinWeChat.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/UnblockURLinWeChat.png",
+      "tag": "ddgksf2013",
+      "size": 454,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2025-04-15"
+    },
+    {
+      "name": "UposRedirect",
+      "desc": "UposRedirect",
+      "category": "Function",
+      "file": "Loon/Function/UposRedirect.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/UposRedirect.png",
+      "tag": "ddgksf2013",
+      "size": 279,
+      "sections": [
+        "Rewrite(1)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2025-04-15"
+    },
+    {
+      "name": "Douban",
+      "desc": "豆瓣电影移动版网页增强，快捷跳转搜片搜索，豆瓣移动版网页去弹窗广告",
+      "category": "Html",
+      "file": "Loon/Html/Douban.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Douban.jpg",
+      "tag": "ddgksf2013",
+      "size": 462,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "ddgksf2013",
+      "versionDate": "2024-01-31"
+    },
+    {
+      "name": "google自动翻页",
+      "desc": "google自动翻页",
+      "category": "Html",
+      "file": "Loon/Html/EndlessGoogle.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/EndlessGoogle.jpg",
+      "tag": "ddgksf2013",
+      "size": 383,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "langkhach270389, modified by Cuttlefish",
+      "versionDate": "2024-01-01"
+    },
+    {
+      "name": "Google CN 跳转",
+      "desc": "访问 g.cn / google.cn 时自动 302 跳转到 google.com",
+      "category": "Html",
+      "file": "Loon/Html/General.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Google.png",
+      "tag": "ddgksf2013",
+      "size": 384,
+      "sections": [
+        "Rewrite(1)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2024-06-01"
+    },
+    {
+      "name": "解锁NewBing搜索",
+      "desc": "适用手机端Safari、Alook、Chrome",
+      "category": "Html",
+      "file": "Loon/Html/NewBing.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/NewBing.png",
+      "tag": "ddgksf2013",
+      "author": "NobyDa",
+      "versionDate": "2023-08-28",
+      "size": 501,
+      "iconSource": "app",
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "Q-Search",
+      "desc": "Q-Search",
+      "category": "Html",
+      "file": "Loon/Html/Q-Search.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Q-Search.png",
+      "tag": "ddgksf2013",
+      "size": 9959,
+      "sections": [
+        "Rewrite(83)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2025-04-15"
+    },
+    {
+      "name": "影视网站去广告",
+      "desc": "自用影视网站去广告配置（不定期更新）",
+      "category": "Html",
+      "file": "Loon/Html/WebAdBlock.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/WebAdBlock.png",
+      "tag": "ddgksf2013",
+      "size": 4021,
+      "sections": [
+        "Rewrite(1)",
+        "Script(17)",
+        "MITM(1)"
+      ],
+      "scripts": 17,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "ddgksf2013",
+      "versionDate": "2025-12-29"
+    },
+    {
+      "name": "动画疯",
+      "desc": "屏蔽播放广告 (黑屏25秒自动播放)",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/BahamutAnimeAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BahamutAnimeAds.jpg",
+      "tag": "NobyDa",
+      "size": 451,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2026-08-12"
+    },
+    {
+      "name": "巴哈姆特 [签到]",
+      "desc": "每日定时签到，包含主站签到、公会签到、动画疯答题等；模块参数可调整签到时间。\\n使用前需要进入BoxJs填写账号密码，BoxJs订阅链接可查看脚本注释。",
+      "category": "Function",
+      "file": "Loon/Function/BahamutDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BahamutDailyBonus.jpg",
+      "tag": "NobyDa",
+      "size": 491,
+      "sections": [
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "哔哩哔哩漫画 [签到]",
+      "desc": "每日定时签到，模块参数可调整签到时间。\\n打开哔哩哔哩漫画APP点击\"我的\"即可获取cookie.",
+      "category": "Function",
+      "file": "Loon/Function/BiliComicsDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BiliComicsDailyBonus.jpg",
+      "tag": "NobyDa",
+      "size": 647,
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "哔哩哔哩漫画 [积分抢购]",
+      "desc": "定时抢购积分商城物品，模块参数可调整抢购设置，该模块需使用\"哔哩哔哩漫画签到模块\"获取Cookie。",
+      "category": "Function",
+      "file": "Loon/Function/BiliComicsExchangePoints.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BiliComicsExchangePoints.jpg",
+      "tag": "NobyDa",
+      "size": 436,
+      "sections": [
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "携程旅行 [签到]",
+      "desc": "每日定时签到，支持多账号。\\n登陆\"携程旅行\"微信小程序或\"携程网页版\"(https://m.ctrip.com/)可获取账号授权，填写模块参数可禁用脚本。",
+      "category": "Function",
+      "file": "Loon/Function/CtripDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/CtripDailyBonus.jpg",
+      "tag": "NobyDa",
+      "size": 709,
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "Disney+评分",
+      "desc": "Disney+剧集页显示IMDb / 烂番茄 / 豆瓣评分",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/DisneyRating.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/DisneyRating.png",
+      "tag": "NobyDa",
+      "size": 451,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "NobyDa",
+      "versionDate": "2025-07-17"
+    },
+    {
+      "name": "签到脚本Cookie获取",
+      "desc": "该模块适用于NobyDa定时签到脚本的Cookie获取. 集成: 爱奇艺, 哔哩哔哩漫画, 百度贴吧, 快看漫画, 携程旅行。",
+      "category": "Function",
+      "file": "Loon/Function/GetCookie.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/GetCookie.png",
+      "tag": "NobyDa",
+      "size": 1466,
+      "sections": [
+        "Script(5)",
+        "MITM(1)"
+      ],
+      "scripts": 5,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "Google人机验证",
+      "desc": "Google搜索内容时并发使用多个策略/策略组，以避免可能出现的人机验证。注意：需要在模块参数填写策略/策略组名的正则表达式。",
+      "category": "Function",
+      "file": "Loon/Function/GoogleCAPTCHA.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/GoogleCAPTCHA.png",
+      "tag": "NobyDa",
+      "size": 559,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "NobyDa",
+      "versionDate": "2024-05-05"
+    },
+    {
+      "name": "荟聚动漫",
+      "desc": "去除大多数弹屏以及底栏广告, 由于有广告缓存, 因此可能需要卸载App重装. @NobyDa",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/HuiJuDongManAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/HuiJuDongManAds.png",
+      "tag": "NobyDa",
+      "size": 1045,
+      "sections": [
+        "MITM(1)",
+        "Rewrite(6)",
+        "Rule(4)"
+      ],
+      "scripts": 0,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "NobyDa",
+      "versionDate": "2022-07-11"
+    },
+    {
+      "name": "IPA应用辅助安装器",
+      "desc": "该模块可在iOS端辅助安装商店版或已签名IPA(需使用快捷指令 + Shu/Jsbox/pythonista), 查看脚本注释以了解具体方法; 安装演示可查看TG频道 @NobyDa",
+      "category": "Function",
+      "file": "Loon/Function/IPA_install.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/IPA_install.jpg",
+      "tag": "NobyDa",
+      "size": 540,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2023-08-16"
+    },
+    {
+      "name": "快看漫画 [签到]",
+      "desc": "每日定时签到，模块参数可调整签到时间。\\n打开快看漫画APP点击\"我的\"即可获取cookie.",
+      "category": "Function",
+      "file": "Loon/Function/KuaiKanComicsDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/KuaiKanComicsDailyBonus.png",
+      "tag": "NobyDa",
+      "size": 622,
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "kelee",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "TestFlight账户管理",
+      "desc": "自动存储/合并多个TestFlight账户列表, 并可导出/分享TestFlight APP.",
+      "category": "Function",
+      "file": "Loon/Function/TestFlightAccount.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TestFlightAccount.jpg",
+      "tag": "NobyDa",
+      "size": 484,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-04-07"
+    },
+    {
+      "name": "TestFlight区域限制解除",
+      "desc": "该模块适用于更新TestFlight App时, 提示\"APP不可用\"问题.",
+      "category": "Function",
+      "file": "Loon/Function/TestFlightDownload.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TestFlightDownload.jpg",
+      "tag": "NobyDa",
+      "size": 471,
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2022-03-03"
+    },
+    {
+      "name": "百度贴吧 [签到]",
+      "desc": "每日定时签到，模块参数可调整签到时间。\\n打开百度贴吧APP点击\"我的\"即可获取cookie.",
+      "category": "Function",
+      "file": "Loon/Function/TieBaDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/TieBaDailyBonus.jpg",
+      "tag": "NobyDa",
+      "size": 654,
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "爱奇艺 [会员签到]",
+      "desc": "每日定时签到，模块参数可调整签到时间。\\n登陆爱奇艺网页版 https://m.ctrip.com/ 使用密码登录可获取签到Cookie.",
+      "category": "Function",
+      "file": "Loon/Function/iQIYIDailyBonus.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/iQIYIDailyBonus.jpg",
+      "tag": "NobyDa",
+      "size": 666,
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "iconSource": "app",
+      "author": "NobyDa",
+      "versionDate": "2024-06-02"
+    },
+    {
+      "name": "SubStore功能增强",
+      "desc": "机场订阅管理工具，访问 sub.store 即可使用",
+      "category": "Function",
+      "file": "Loon/Function/SubStore.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/SubStore.png",
+      "tag": "Peng-YM",
+      "size": 653,
+      "iconSource": "kelee",
+      "sections": [
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": [],
+      "author": "Peng-YM",
+      "versionDate": "2025-08-08"
+    },
+    {
+      "name": "BoxJs功能增强",
+      "desc": "脚本管理和数据持久化工具，访问 boxjs.com 或 boxjs.net 即可使用",
+      "category": "Function",
+      "file": "Loon/Function/BoxJs.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/BoxJs.png",
+      "tag": "chavyleung",
+      "size": 479,
+      "iconSource": "kelee",
+      "sections": [
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": [],
+      "author": "chavyleung",
+      "versionDate": "2023-02-08"
+    },
+    {
+      "name": "WeatherKit功能增强",
+      "desc": "解锁苹果天气（WeatherKit）",
+      "category": "Function",
+      "file": "Loon/Function/WeatherKit.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/WeatherKit.png",
+      "tag": "NSRingo",
+      "author": "VirgilClyne[https://github.com/VirgilClyne],WordlessEcho[https://github.com/WordlessEcho],001[https://github.com/001ProMax],hhh2210[https://github.com/hhh2210]",
+      "versionDate": "2026-08-29",
+      "size": 2069,
+      "iconSource": "app",
+      "sections": [
+        "Rule(3)",
+        "Script(5)",
+        "MITM(1)"
+      ],
+      "scripts": 5,
+      "external": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Baidunoredirect.lpx",
+      "icon": "",
+      "tag": "",
+      "author": "",
+      "versionDate": "",
+      "size": 324,
+      "iconSource": "kelee",
+      "sections": [
+        "Mitm(1)",
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "哔哩哔哩去广告",
+      "desc": "开屏/推荐页/动态/播放页/番剧页广告，协议级 + JSON 双层处理",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Bilibili.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/bilibili.png",
+      "tag": "app2smile",
+      "author": "app2smile, @ddgksf2013, @blackmatrix7",
+      "versionDate": "2026-03-04",
+      "size": 3429,
+      "iconSource": "app",
+      "sections": [
+        "Rewrite(8)",
+        "Script(9)",
+        "MITM(1)"
+      ],
+      "scripts": 9,
+      "external": []
+    },
+    {
+      "name": "起点去广告",
+      "desc": "开屏/每日导读/发现页弹窗/书架活动悬浮",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Qidian.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/qidian.png",
+      "tag": "app2smile",
+      "author": "app2smile",
+      "versionDate": "",
+      "size": 905,
+      "iconSource": "kelee",
+      "sections": [
+        "Mitm(1)",
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "腾讯新闻去广告",
+      "desc": "信息流与开屏广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Qqnews.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/qqnews.png",
+      "tag": "app2smile",
+      "author": "app2smile",
+      "versionDate": "",
+      "size": 660,
+      "iconSource": "kelee",
+      "sections": [
+        "Mitm(1)",
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "Spotify去广告",
+      "desc": "播放广告/歌手专辑列表/随机播放",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Spotify.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/spotify.png",
+      "tag": "app2smile",
+      "author": "app2smile",
+      "versionDate": "",
+      "size": 1094,
+      "iconSource": "kelee",
+      "sections": [
+        "Rewrite(1)",
+        "Mitm(1)",
+        "Script(2)"
+      ],
+      "scripts": 2,
+      "external": []
+    },
+    {
+      "name": "机核去广告",
+      "desc": "开屏与信息流广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Vgtime.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/vgtime.png",
+      "tag": "app2smile",
+      "author": "app2smile",
+      "versionDate": "",
+      "size": 387,
+      "iconSource": "kelee",
+      "sections": [
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "YouTube去广告",
+      "desc": "贴片广告/首页瀑布流/播放页推荐/搜索页/短视频，附 PIP 与后台播放",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Youtube.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/youtube.png",
+      "tag": "app2smile",
+      "author": "app2smile, @ddgksf2013",
+      "versionDate": "2025-04-15",
+      "size": 1238,
+      "iconSource": "app",
+      "sections": [
+        "Rewrite(5)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "知乎去广告",
+      "desc": "开屏/悬浮框/推荐列表/回答下广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Zhihu.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/zhihu.png",
+      "tag": "app2smile",
+      "author": "app2smile",
+      "versionDate": "",
+      "size": 841,
+      "iconSource": "kelee",
+      "sections": [
+        "Rule(3)",
+        "Mitm(1)",
+        "Script(1)"
+      ],
+      "scripts": 1,
+      "external": []
+    },
+    {
+      "name": "Spotify解锁",
+      "desc": "解锁 Premium 功能（原作者 ddgksf2013 维护版本）",
+      "category": "UnlockVip",
+      "file": "Loon/UnlockVip/SpotifyVip.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Spotify.jpg",
+      "tag": "ddgksf2013",
+      "author": "ddgksf2013",
+      "versionDate": "2026-05-08",
+      "size": 1192,
+      "iconSource": "kelee",
+      "sections": [
+        "Script(3)",
+        "MITM(1)"
+      ],
+      "scripts": 3,
+      "external": []
+    }
+  ]
+}

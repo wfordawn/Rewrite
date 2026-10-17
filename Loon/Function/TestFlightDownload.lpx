@@ -1,0 +1,12 @@
+#!name=TestFlight区域限制解除
+#!desc=该模块适用于更新TestFlight App时, 提示"APP不可用"问题.
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/TestFlightDownload.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2022-03-03
+
+[Script]
+http-request ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/nobyda_TF_Download.js, requires-body=true, timeout=60, tag=TF下载修正
+
+[MITM]
+hostname = testflight.apple.com

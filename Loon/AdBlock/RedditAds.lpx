@@ -1,0 +1,12 @@
+#!name=Reddit增强
+#!desc=去除Reddit信息流广告、帖子页面广告、帖子TreeAds、社区信息流广告，另去除信息流的NSFW图的遮罩，NSFW的帖子点击可直接查看图，伪装Premium，解锁会员图标
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/RedditAds.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2025-05-30
+
+[Script]
+http-response ^https?:\/\/gql-fed\.reddit\.com\/$ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/reddit.js, requires-body=true, timeout=60, tag=reddit
+
+[MITM]
+hostname = gql-fed.reddit.com

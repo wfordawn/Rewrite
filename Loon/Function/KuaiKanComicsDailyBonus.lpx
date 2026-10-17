@@ -1,0 +1,13 @@
+#!name=快看漫画 [签到]
+#!desc=每日定时签到，模块参数可调整签到时间。\n打开快看漫画APP点击"我的"即可获取cookie.
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/KuaiKanComicsDailyBonus.png
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-06-02
+
+[Script]
+cron "定时签到" script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/KKMH.js, timeout=300, tag=快看漫画[签到]
+http-request ^https?:\/\/api\.kkmh\.com\/v\d\/passport\/user script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/KKMH.js, requires-body=false, timeout=60, tag=禁用脚本
+
+[MITM]
+hostname = api.kkmh.com

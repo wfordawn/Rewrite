@@ -1,0 +1,14 @@
+#!name=IOS伪装影视APP净化
+#!desc=去广告配置（自用，持续更新...）
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/FakeiOSAds.png
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2025-10-26
+
+[Rewrite]
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/api\/v\d\/config\/getConfigList\.do response-body-json-jq '.data |= map(select(.keyName | test("config\\.(ad|search|recommend)") | not))'
+# > common
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/.*?\/v\d\/(version|notice\?|top_notice\?|advert\?position=[^2]+) - reject-200
+
+[MITM]
+hostname = app.dsx.ac

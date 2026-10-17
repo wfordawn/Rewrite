@@ -1,0 +1,13 @@
+#!name=爱奇艺 [会员签到]
+#!desc=每日定时签到，模块参数可调整签到时间。\n登陆爱奇艺网页版 https://m.ctrip.com/ 使用密码登录可获取签到Cookie.
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/iQIYIDailyBonus.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-06-02
+
+[Script]
+cron "定时签到" script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iQIYI.js, timeout=300, tag=爱奇艺[会员签到]
+http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iQIYI.js, requires-body=false, timeout=60, tag=禁用脚本
+
+[MITM]
+hostname = passport.iqiyi.com

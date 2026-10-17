@@ -1,0 +1,12 @@
+#!name=TestFlight账户管理
+#!desc=自动存储/合并多个TestFlight账户列表, 并可导出/分享TestFlight APP.
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/TestFlightAccount.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-04-07
+
+[Script]
+http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/TestFlightAccount.js, requires-body=true, timeout=60, tag=TestFlight账户管理
+
+[MITM]
+hostname = testflight.apple.com

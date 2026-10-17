@@ -1,0 +1,15 @@
+#!name=起点去广告
+#!desc=开屏/每日导读/发现页弹窗/书架活动悬浮
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/qidian.png
+#!tag=app2smile
+#!author=@app2smile
+
+#   目前支持:
+#       开屏页广告,每日导读去除(需全新应用),冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,
+#       去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
+
+[Mitm]
+hostname = magev6.if.qidian.com
+
+[Script]
+http-response ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/(deeplink\/geturl|dailyrecommend\/getdailyrecommend)|v1\/(client\/getconf$|bookshelf\/getHoverAdv|adv\/getadvlistbatch\?positions=iOS_tab)) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/qidian.js, requires-body=true, timeout=10, tag=起点json

@@ -1,0 +1,12 @@
+#!name=解锁NewBing搜索
+#!desc=适用手机端Safari、Alook、Chrome
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/NewBing.png
+#!tag=ddgksf2013
+#!author=@NobyDa
+#!version=2023-08-28
+
+[Script]
+http-request ^https?:\/\/www\.bing\.com\/(search|new|web) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/scripthub_replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)(User-Agent%3A.%2B)(%5Cr%5Cn)-%3E%241%242%243
+
+[MITM]
+hostname = www.bing.com

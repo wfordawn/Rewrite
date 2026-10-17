@@ -1,0 +1,21 @@
+#!name=车来了(小程序)净化
+#!desc=如果有需要的去除广告的APP，可自行在共享表格中添加需求
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/CheLaiLeAds.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2025-10-09
+
+[Rewrite]
+^https?:\/\/.*chelaile\.net\.cn\/goocity\/flowPos\/listByPos - reject
+^https?:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html - reject-200
+^https?:\/\/.*chelaile\.net\.cn\/(api\/)?adpub - reject-200
+^https?:\/\/124\.70\.194\.16\/(ip|adpub) - reject-200
+^https?:\/\/124\.70\.194\.16\/goocity\/flowPos\/listByPos - reject-200
+^https?:\/\/web\.chelaile\.net\.cn\/api\/operative_position\/infoflow - reject-200
+^https?:\/\/atrace\.chelaile\.net\.cn\/(wx_preloadAd|adAnalysis) - reject-200
+
+[Script]
+http-response ^https?:\/\/.*chelaile\.net\.cn\/goocity\/city! script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/chelaile.js, requires-body=true, timeout=60, tag=chelaile
+
+[MITM]
+hostname = web.chelaile.net.cn, api.chelaile.net.cn, cdn.api.chelaile.net.cn, cdn.web.chelaile.net.cn, atrace.chelaile.net.cn

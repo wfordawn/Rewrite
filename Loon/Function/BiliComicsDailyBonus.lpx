@@ -1,0 +1,13 @@
+#!name=哔哩哔哩漫画 [签到]
+#!desc=每日定时签到，模块参数可调整签到时间。\n打开哔哩哔哩漫画APP点击"我的"即可获取cookie.
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/BiliComicsDailyBonus.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-06-02
+
+[Script]
+cron "定时签到" script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Manga.js, timeout=300, tag=哔哩漫画[签到]
+http-request ^https:\/\/app\.bilibili\.com\/x\/v\d\/account\/myinfo script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Manga.js, requires-body=false, timeout=60, tag=禁用脚本
+
+[MITM]
+hostname = app.bilibili.com

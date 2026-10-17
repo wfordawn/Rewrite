@@ -1,0 +1,13 @@
+#!name=携程旅行 [签到]
+#!desc=每日定时签到，支持多账号。\n登陆"携程旅行"微信小程序或"携程网页版"(https://m.ctrip.com/)可获取账号授权，填写模块参数可禁用脚本。
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/CtripDailyBonus.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-06-02
+
+[Script]
+cron "定时签到" script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Ctrip.js, timeout=300, tag=携程旅行[签到]
+http-response ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/[a-zA-Z]+Login(?:$|\?) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Ctrip.js, requires-body=true, timeout=60, tag=禁用脚本
+
+[MITM]
+hostname = m.ctrip.com

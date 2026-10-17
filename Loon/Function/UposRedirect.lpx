@@ -1,0 +1,12 @@
+#!name=UposRedirect
+#!desc=UposRedirect
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/UposRedirect.png
+#!tag=ddgksf2013
+#!version=2025-04-15
+#!author=@ddgksf2013
+
+[Rewrite]
+^https?:\/\/upos-hz-mirrorakam\.akamaized\.net\/(.*) https://upos-sz-mirrorcos.bilivideo.com/$1 302
+
+[MITM]
+hostname = upos-hz-mirrorakam.akamaized.net

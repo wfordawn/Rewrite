@@ -1,0 +1,8 @@
+#!name=机核去广告
+#!desc=开屏与信息流广告
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/vgtime.png
+#!tag=app2smile
+#!author=@app2smile
+
+[Script]
+http-response ^http:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/vgtime.js, requires-body=true, timeout=10, tag=vgTime

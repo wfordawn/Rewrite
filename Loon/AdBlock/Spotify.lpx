@@ -1,0 +1,17 @@
+#!name=Spotify去广告
+#!desc=播放广告/歌手专辑列表/随机播放
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/spotify.png
+#!tag=app2smile
+#!author=@app2smile
+
+# 功能: 1.去除播放广告 2.歌手/专辑列表正常展示 3.去除随机播放
+
+[Rewrite]
+^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
+
+[Mitm]
+hostname =spclient.wg.spotify.com, *spclient.spotify.com
+
+[Script]
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/spotify-json.js, timeout=10, tag=spotifyJson
+http-response ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=spotifyProto

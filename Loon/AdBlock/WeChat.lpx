@@ -1,0 +1,13 @@
+#!name=微信公众号去广告[已失效]
+#!desc=Block AD
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/WeChat.jpg
+#!tag=ddgksf2013
+#!version=2025-04-15
+#!author=@ddgksf2013
+
+[Script]
+# > 微信公众号去广告[已失效][不包含公众号信息流AD、朋友圈AD][推荐开启青少年模式可去除朋友圈AD]
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=advertisement-%3Eddgksf2013
+
+[MITM]
+hostname = mp.weixin.qq.com

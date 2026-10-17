@@ -1,0 +1,48 @@
+#!name=影视网站去广告
+#!desc=自用影视网站去广告配置（不定期更新）
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/WebAdBlock.png
+#!tag=ddgksf2013
+#!version=2025-12-29
+#!author=@ddgksf2013
+
+[Rewrite]
+^https?:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject-dict
+
+[Script]
+http-response ^https?:\/\/www\.zxzjhd\.com\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/adguard.js, requires-body=true, timeout=60, tag=adguard
+
+http-response ^https?:\/\/www\.freeok\.(vip|pro)(\/$|\/[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/adguard.js, requires-body=true, timeout=60, tag=adguard
+
+http-response ^https?:\/\/.*bdys.*com\/($|([a-z]+)\/(play\/)?\d+.*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/bdys.js, requires-body=true, timeout=60, tag=bdys
+
+http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/pornhub.js, requires-body=true, timeout=60, tag=pornhub
+
+http-response ^https?:/\/.*bimi.*net\/($|(vodshow|bangumi|type)\/[0-9a-z-\/]+\/$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/bimi.js, requires-body=true, timeout=60, tag=bimi
+
+http-response ^https?:\/\/.*18comic\.org\/($|(album|photo).*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/18comic.js, requires-body=true, timeout=60, tag=18comic
+
+http-response ^https?:\/\/.*gimy.*\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/gimytv.js, requires-body=true, timeout=60, tag=gimytv
+
+http-response ^https?:\/\/.*czzy.*\/($|\?btwaf=\w+$|[0-9a-zA-Z=_/-]+\.html) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/qianoo.js, requires-body=true, timeout=60, tag=qianoo
+
+http-response ^https?:/\/.*cupfox\.*\/($|[\u4E00-\u9FFFa-zA-Z0-9%=_/-]+$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cupbox.js, requires-body=true, timeout=60, tag=cupbox
+
+http-response ^https?:/\/cokemv\.me\/($|vod.*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cokemv.js, requires-body=true, timeout=60, tag=cokemv
+
+http-response ^https?:\/\/.*5y.*\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/555.js, requires-body=true, timeout=60, tag=555
+
+# > 06 泥巴影视[网页优化]@Adblock4limbo - 网站地址：https://m.nivod4.tv
+http-response ^https?:\/\/.*nivod.*\/($|[0-9a-zA-Z=_/-]+\.html) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/nivod.js, requires-body=true, timeout=60, tag=nivod
+
+http-response ^https?:\/\/.*netflix.*\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/netflix.js, requires-body=true, timeout=60, tag=netflix
+
+http-response ^https?:/\/.*lezhutv\.com\/($|(type|detail|play|index).*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/lezhu.js, requires-body=true, timeout=60, tag=lezhu
+
+http-response ^https?:\/\/.*tkznp.*com\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/tkys.js, requires-body=true, timeout=60, tag=tkys
+
+http-response ^https?:\/\/.*ikandy.*fun\/($|(vod|top).*$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/zhenbuka.js, requires-body=true, timeout=60, tag=zhenbuka
+
+http-response ^https?:\/\/.*libvio.*me\/($|[0-9a-zA-Z=_/-]+\.html$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/libvio.js, requires-body=true, timeout=60, tag=libvio
+
+[MITM]
+hostname = www.zxzjhd.com, m.nivod4.tv, *.freeok.*, *netflix*, *bdys*, *cupfox*, *cokemv*, *pornhub.com, *lezhutv*, *bimi*, 18comic.org, *5y*, *gimy*, *tkznp*, *czzy*, *ikandy*, *libvio*

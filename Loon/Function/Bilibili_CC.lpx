@@ -1,0 +1,12 @@
+#!name=哔哩哔哩繁体CC字幕转中文简体
+#!desc=哔哩哔哩繁体CC字幕转中文简体
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/Bilibili_CC.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2023-04-13
+
+[Script]
+http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
+
+[MITM]
+hostname = aisubtitle.hdslb.com, i0.hdslb.com

@@ -1,0 +1,12 @@
+#!name=UnblockURLinWeChat
+#!desc=UnblockURLinWeChat
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/UnblockURLinWeChat.png
+#!tag=ddgksf2013
+#!version=2025-04-15
+#!author=@ddgksf2013
+
+[Script]
+http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/weixin110.js, requires-body=true, timeout=60, tag=weixin110
+
+[MITM]
+hostname = weixin110.qq.com, security.wechat.com

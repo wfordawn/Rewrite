@@ -1,0 +1,27 @@
+#!name=百度网盘净化
+#!desc=百度网盘净化
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/BaiduCloud.jpg
+#!tag=ddgksf2013
+#!version=2025-12-29
+#!author=@ddgksf2013
+
+[Rewrite]
+^https?:\/\/.*baidu\.com\/rest\/.*\/membership\/proxy\/guide - reject-200
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject-200
+^https?:\/\/pan\.baidu\.com\/rest\/.*\/pcs\/ad - reject-200
+^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject-200
+^https:\/\/pan\.baidu\.com\/feed\/hotlist - reject-200
+^https:\/\/pan\.baidu\.com\/queryintent\/queryhint - reject-200
+^https:\/\/pan\.baidu\.com\/coins\/center\/notice - reject-200
+
+[Script]
+http-response ^https?:\/\/pan\.baidu\.com\/api\/getsyscfg script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+
+http-response ^https?:\/\/afd\.baidu\.com\/afd\/entry script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+
+http-response ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+
+http-response ^https:\/\/pan\.baidu\.com\/feed\/cardinfos script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+
+[MITM]
+hostname = pan.baidu.com

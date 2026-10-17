@@ -1,0 +1,13 @@
+#!name=SubStore功能增强
+#!desc=机场订阅管理工具，访问 sub.store 即可使用
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/SubStore.png
+#!tag=Peng-YM
+#!author=@Peng-YM
+#!version=2025-08-08
+
+[Script]
+http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/substore-1.min.js, requires-body=true, timeout=60, tag=sub-store-1.min
+http-request ^https?:\/\/sub\.store script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/substore-0.min.js, requires-body=true, timeout=60, tag=sub-store-0.min
+
+[MITM]
+hostname = sub.store

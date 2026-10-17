@@ -1,0 +1,34 @@
+#!name=WeatherKit功能增强
+#!desc=解锁苹果天气
+#!author=VirgilClyne[https://github.com/VirgilClyne],WordlessEcho[https://github.com/WordlessEcho],001[https://github.com/001ProMax],hhh2210[https://github.com/hhh2210]
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/WeatherKit.png
+#!tag=NSRingo
+#!openUrl=http://boxjs.com/#/app/iRingo.WeatherKit
+#!homepage=https://NSRingo.github.io/guide/Weather/weather-kit
+#!date=2026-08-29 08:12:58
+#!version=3.3.2
+
+[Rule]
+#[filter_local]
+DOMAIN,weather-analytics-events.apple.com,REJECT
+DOMAIN-SUFFIX,tthr.apple.com,REJECT
+DOMAIN,tether.edge.apple,REJECT
+
+[Script]
+# 🌤 WeatherKit.api.v1.availability.response
+http-response ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iringo_response.bundle.js, requires-body=true, timeout=60, tag=response.bundle
+
+# 🌤 WeatherKit.api.v1.airQualityScale.request
+http-request ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/airQualityScale\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iringo_request.bundle.js, timeout=60, tag=request.bundle
+
+# 🌤 WeatherKit.api.v1.weatherAlerts.response
+http-request ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/weatherAlerts\?[^#]*&ids=[^&#]*-[0-9]{9}(?:&|$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iringo_request.bundle.js, timeout=60, tag=request.bundle
+
+http-request ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/weatherAlerts\?[^#]*&ids=-?[0-9]+(?:\.[0-9]+)?,-?[0-9]+(?:\.[0-9]+)?(?:&|$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iringo_request.bundle.js, timeout=60, tag=request.bundle
+
+# 🌤 WeatherKit.api.v2.weather.response
+http-response ^https?:\/\/weatherkit\.apple\.com\/api\/v2\/weather\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iringo_response.bundle.js, requires-body=true, timeout=60, tag=response.bundle
+
+[MITM]
+hostname = weatherkit.apple.com
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<title>Loon 插件库 · ddgksf2013</title>
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#141b24; --panel2:#1b2530; --line:#243140;
+    --txt:#e8eef5; --dim:#8b9bad; --accent:#4ea1ff; --accent2:#6ee7a8;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    padding:0 0 48px;
+  }
+  header{
+    padding:28px 18px 16px;background:linear-gradient(180deg,#101822,var(--bg));
+    border-bottom:1px solid var(--line);
+  }
+  h1{margin:0 0 8px;font-size:26px;letter-spacing:.3px}
+  .sub{color:var(--dim);font-size:15px;line-height:1.65}
+  .sub a{color:var(--accent);text-decoration:none}
+  .bar{padding:14px 18px 8px;position:sticky;top:0;background:rgba(11,15,20,.92);backdrop-filter:blur(12px);z-index:5}
+  input[type=search]{
+    width:100%;padding:11px 14px;border-radius:11px;border:1px solid var(--line);
+    background:var(--panel);color:var(--txt);font-size:17px;outline:none;
+  }
+  input[type=search]:focus{border-color:var(--accent)}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 18px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{
+    flex:0 0 auto;padding:9px 15px;border-radius:999px;border:1px solid var(--line);
+    background:var(--panel);color:var(--dim);font-size:15px;cursor:pointer;transition:.15s;
+  }
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#04121f;font-weight:600}
+  .list{padding:9px 11px;display:grid;gap:9px}
+  .card{
+    display:flex;gap:12px;padding:12px 12px;border-radius:14px;background:var(--panel);
+    border:1px solid var(--line);cursor:pointer;transition:.15s;
+  }
+  .card:active{transform:scale(.985);background:var(--panel2)}
+  .icon{width:50px;height:50px;border-radius:12px;background:var(--panel2);flex:0 0 auto;object-fit:cover}
+  .body{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center}
+  .title{font-size:16px;font-weight:600;margin:0 0 4px;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .desc{
+    font-size:13px;color:var(--dim);line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+  .tag{font-size:11px;padding:3px 8px;border-radius:6px;background:#1d2a38;color:#8fb8dd}
+  .tag.cat{background:#1d3830;color:var(--accent2)}
+  .empty{padding:48px 20px;text-align:center;color:var(--dim);font-size:14px}
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);
+    background:#1e2a38;border:1px solid var(--line);color:var(--txt);
+    padding:12px 18px;border-radius:12px;font-size:13.5px;opacity:0;
+    transition:.25s;pointer-events:none;max-width:88vw;text-align:center;
+  }
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+  .toast.err{border-color:#5a2a2a;background:#2a1a1a}
+  footer{padding:22px 18px;color:#5c6b7d;font-size:12px;text-align:center;line-height:1.7}
+  .link{cursor:pointer;color:var(--accent);font-size:12px;margin-top:6px;display:inline-block}
+</style>
+</head>
+<body>
+<header>
+  <h1>Loon 插件库</h1>
+  <div class="sub">
+    共 <b id="total">0</b> 个插件 · 作者 <a href="https://github.com/ddgksf2013/Rewrite" target="_blank">ddgksf2013</a><br>
+    点击卡片即可导入到 Loon（需在 iPhone / iPad 上打开本页）
+  </div>
+</header>
+
+<div class="bar"><input id="q" type="search" placeholder="搜索插件名称、描述或分类…" autocomplete="off"></div>
+<div class="chips" id="chips"></div>
+<div class="list" id="list"></div>
+<footer>
+  插件内容版权归原作者所有，请遵守上游许可条款。<br>
+  更新于 <span id="gen">—</span>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const RAW = 'https://raw.githubusercontent.com/wfordawn/Rewrite/master/';
+let ALL = [], cat = '全部', kw = '';
+
+const $ = id => document.getElementById(id);
+const list = $('list'), chips = $('chips');
+
+function toast(msg, err){
+  const t = $('toast');
+  t.textContent = msg;
+  t.className = 'toast on' + (err ? ' err' : '');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.className = 'toast' + (err ? ' err' : ''), 2600);
+}
+
+function importUrl(p){
+  return 'loon://import?plugin=' + encodeURIComponent(RAW + p.file);
+}
+
+function tagChips(p){
+  const s = p.sections || [];
+  const counts = {};
+  s.forEach(x => { const k = x.split('(')[0]; counts[k] = (counts[k]||0) + 1; });
+  return Object.keys(counts).map(k => `<span class="tag">${k} ${counts[k]}</span>`).join('');
+}
+
+function render(){
+  const q = kw.trim().toLowerCase();
+  const rows = ALL.filter(p => {
+    if (cat !== '全部' && p.category !== cat) return false;
+    if (!q) return true;
+    return (p.name + ' ' + p.desc + ' ' + p.category + ' ' + (p.author || '')).toLowerCase().includes(q);
+  });
+  if (!rows.length){
+    list.innerHTML = '<div class="empty">没有匹配的插件</div>';
+    return;
+  }
+  list.innerHTML = rows.map((p, i) => `
+    <div class="card" data-i="${ALL.indexOf(p)}">
+      <img class="icon" src="${p.icon || ''}" alt="" loading="lazy"
+           onerror="this.style.visibility='hidden'">
+      <div class="body">
+        <div class="title">${esc(p.name)}</div>
+        <div class="desc">${esc(p.desc || '暂无描述')}</div>
+        <div class="meta">
+          <span class="tag cat">${p.category}</span>${tagChips(p)}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function esc(s){
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+list.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+  const p = ALL[Number(card.dataset.i)];
+  const url = importUrl(p);
+  toast('正在唤起 Loon…');
+  const t0 = Date.now();
+  window.location.href = url;
+  setTimeout(() => {
+    if (Date.now() - t0 < 2500 && !document.hidden){
+      toast('未检测到 Loon，请确认已在 Safari 中打开本页', true);
+    }
+  }, 2200);
+});
+
+$('q').addEventListener('input', e => { kw = e.target.value; render(); });
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) $('toast').className = 'toast';
+});
+
+fetch(RAW + 'index.json?v=' + Date.now(), {cache: 'no-store'})
+  .then(r => r.json())
+  .then(d => {
+    ALL = d.plugins || [];
+    $('total').textContent = ALL.length;
+    $('gen').textContent = new Date().toISOString().slice(0,10);
+    const cats = ['全部', ...new Set(ALL.map(p => p.category))];
+    chips.innerHTML = cats.map((c, i) =>
+      `<div class="chip${i===0?' on':''}" data-c="${c}">${c}</div>`).join('');
+    render();
+  })
+  .catch(err => {
+    list.innerHTML = '<div class="empty">加载 index.json 失败：' + esc(err.message) + '</div>';
+  });
+
+chips.addEventListener('click', e => {
+  const c = e.target.closest('.chip');
+  if (!c) return;
+  cat = c.dataset.c;
+  [...chips.children].forEach(x => x.classList.toggle('on', x === c));
+  render();
+});
+</script>
+</body>
+</html>

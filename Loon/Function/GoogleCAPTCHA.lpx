@@ -1,0 +1,12 @@
+#!name=Google人机验证
+#!desc=Google搜索内容时并发使用多个策略/策略组，以避免可能出现的人机验证。注意：需要在模块参数填写策略/策略组名的正则表达式。
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/GoogleCAPTCHA.png
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-05-05
+
+[Script]
+http-response ^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Google_CAPTCHA.js, requires-body=true, timeout=60, tag=Google CAPTCHA
+
+[MITM]
+hostname = www.google.com*

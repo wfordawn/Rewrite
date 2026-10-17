@@ -1,0 +1,28 @@
+#!name=Emby增强
+#!desc=Emby官方客户端内调用外部播放器，该功能需要自行添加Emby服域名的MITM
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/EmbyPlugin.jpg
+#!tag=ddgksf2013
+#!author=@renzhipengBot 原创，@AppleArcade 魔改
+#!version=2024-01-24
+
+[Script]
+# > 播放解锁
+http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/unlock.js, requires-body=true, timeout=60, tag=unlock
+
+# > 添加外部播放器连接
+http-response \/[Uu]sers\/\w{32}\/[Ii]tems\/\d+\?? script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/emby-plugin.js, requires-body=true, timeout=60, tag=emby-plugin
+
+# > 打开外部播放器
+http-request \/plugin\/scheme script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/emby-plugin.js, timeout=60, tag=emby-plugin
+
+# > 资源路径伪静态
+http-request (\/[Vv]ideos\/\d+\/stream\/.+\?.+&filename)|(\/[Vv]ideos\/\d+\/\w{32}\/[Ss]ubtitles\/\d+\/.+\?.+&filename) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/emby-plugin.js, timeout=60, tag=emby-plugin
+
+# > 下载文件重命名
+http-response (\/[Vv]ideos\/\d+\/stream\?.+&filename)|(\/[Vv]ideos\/\d+\/\w{32}\/[Ss]ubtitles\/.+&filename) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/download_file_rename.js, timeout=60, tag=download_file_rename
+
+# > 解决QX抓取某些公益服该请求乱码问题
+http-request \/Users\/\w{32}\/Items\/\d+\? script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Encoding%3A.%2B-%3E%24Accept-Encoding%3A%20gzip%2C%20deflate%2C%20br
+
+[MITM]
+hostname = mb3admin.com, *.emby.wtf, *.plusmedia.site

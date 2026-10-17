@@ -1,0 +1,29 @@
+#!name=百度贴吧净化
+#!desc=去开屏/推荐流/吧内列表/详情页/看图模式广告，屏蔽右下角悬浮广告与置顶广告
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/TieBaAds.jpg
+#!tag=ddgksf2013
+#!author=@app2smile, @ddgksf2013
+#!version=2026-01-06
+#!arguments=per_filter_video_thread:0
+#!arguments-desc=推荐页是否隐藏视频贴：1 隐藏，0 显示
+
+[Rule]
+DOMAIN,180.76.76.200,REJECT
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+
+[Rewrite]
+^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/search\/discover response-body-json-jq '.data.discover_list = []'
+^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/sidebar\/home response-body-json-jq 'del(.game_center, .tools, .vip_banner, .task_list)'
+^https?:\/\/tieba(c)?\.baidu\.com\/c\/u\/user\/profile response-body-json-jq 'del(.duxiaoman, .namoaixud, .namoaixud_entry, .recom_naws_list, .duxiaoman_entry, .vip_banner) | .zone_info |= map(select(.type == "common_func" or .type == "auxiliary_func"))'
+^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/forum\/forumGuide response-body-json-jq '.hot_search = []'
+^https?:\/\/tieba(c)?\.baidu\.com\/mo\/q\/search\/startPage response-body-json-jq 'del(.data)'
+^https?:\/\/tieba(c)?\.baidu\.com\/c\/f\/ad\/getFeedAd - reject-200
+
+[Script]
+# > 贴吧 json 广告处理@app2smile
+http-response ^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/tieba-json.js, requires-body=true, timeout=10, tag=贴吧json
+# > 贴吧 proto 广告处理@app2smile
+http-response ^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=贴吧proto, argument=per_filter_video_thread=0
+
+[MITM]
+hostname = tieba.baidu.com, tiebac.baidu.com

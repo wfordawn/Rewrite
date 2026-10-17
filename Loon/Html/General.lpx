@@ -1,0 +1,14 @@
+#!name=Google CN 跳转
+#!desc=访问 g.cn / google.cn 时自动 302 跳转到 google.com
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/Google.png
+#!tag=ddgksf2013
+#!version=2024-06-01
+#!author=@ddgksf2013
+
+[Rewrite]
+# > Google 搜索结果重定向
+# Redirect Google Search Service
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+[MITM]
+hostname = www.google.cn

@@ -1,0 +1,16 @@
+#!name=签到脚本Cookie获取
+#!desc=该模块适用于NobyDa定时签到脚本的Cookie获取. 集成: 爱奇艺, 哔哩哔哩漫画, 百度贴吧, 快看漫画, 携程旅行。
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/GetCookie.png
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2024-06-02
+
+[Script]
+http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/iQIYI.js, requires-body=false, timeout=60, tag=爱奇艺Cookie
+http-request ^https:\/\/app\.bilibili\.com\/x\/v\d\/account\/myinfo script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Manga.js, requires-body=false, timeout=60, tag=哔哩漫画Cookie
+http-request ^https?:\/\/(c\.tieba|tiebac)\.baidu\.com\/c\/s\/login script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/TieBa.js, requires-body=false, timeout=60, tag=百度贴吧Cookie
+http-request ^https:\/\/api\.kkmh\.com\/v\d\/passport\/user script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/KKMH.js, requires-body=false, timeout=60, tag=快看漫画Cookie
+http-response ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/[a-zA-Z]+Login(?:$|\?) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/Ctrip.js, requires-body=true, timeout=60, tag=携程旅行Cookie
+
+[MITM]
+hostname = passport.iqiyi.com, app.bilibili.com, c.tieba.baidu.com, tiebac.baidu.com, api.kkmh.com, m.ctrip.com

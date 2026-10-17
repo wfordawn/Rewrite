@@ -1,0 +1,30 @@
+#!name=菜鸟[菜鸟裹裹](支付宝小程序)净化
+#!desc=菜鸟[菜鸟裹裹](支付宝小程序)净化
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/CainiaoAds.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2025-10-07
+
+[Rewrite]
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?!.*_home) - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow\.cn - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.v\d+\.bottom\.area - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\. - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.alimama\.abyss\.unionpage\.get - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject-200
+^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge - reject-200
+
+[Script]
+http-response ^http:\/\/amdc\.m\.taobao\.com script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/amdc.js, requires-body=true, timeout=60, tag=amdc
+
+http-response ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cainiao_json.js, requires-body=true, timeout=60, tag=cainiao_json
+
+http-response ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.homepage\.merge\.get\.cn script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cainiao_json.js, requires-body=true, timeout=60, tag=cainiao_json
+
+http-response ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cainiao_json.js, requires-body=true, timeout=60, tag=cainiao_json
+
+http-response ^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/cainiao_json.js, requires-body=true, timeout=60, tag=cainiao_json
+
+[MITM]
+hostname = *.cainiao.com, guide-acs.m.taobao.com, acs4miniapp-inner.m.taobao.com

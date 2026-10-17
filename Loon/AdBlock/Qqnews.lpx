@@ -1,0 +1,13 @@
+#!name=腾讯新闻去广告
+#!desc=信息流与开屏广告
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/qqnews.png
+#!tag=app2smile
+#!author=@app2smile
+
+# 腾讯新闻开屏广告(须全新应用),新闻列表(要闻/财经等),专题广告,xx旅游列表等广告去除
+
+[Mitm]
+hostname = news.ssp.qq.com, r.inews.qq.com
+
+[Script]
+http-response ^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list)) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/qq-news.js, requires-body=true, timeout=10, tag=腾讯新闻json

@@ -1,0 +1,12 @@
+#!name=TFDownload
+#!desc=解决国区TF中无法下载某些应用（QX、小火箭、LOON）的问题
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/TFDownload.jpg
+#!tag=ddgksf2013
+#!author=@id77, Modified by Cuttlefish
+#!version=2022-02-15
+
+[Script]
+http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=storefrontId%22%20%3A%20%22.*%22-%3EstorefrontId%22%20%3A%20%22143441-1%2C29%22
+
+[MITM]
+hostname = testflight.apple.com

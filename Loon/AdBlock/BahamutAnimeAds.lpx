@@ -1,0 +1,12 @@
+#!name=动画疯
+#!desc=屏蔽播放广告 (黑屏25秒自动播放)
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/BahamutAnimeAds.jpg
+#!tag=NobyDa
+#!author=@NobyDa
+#!version=2026-08-12
+
+[Script]
+http-response ^https:\/\/api\.gamer\.com\.tw(\/mobile_app|)\/anime\/v\d/(token|m3u8|video_src).php\? script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=动画疯(屏蔽广告)
+
+[MITM]
+hostname = api.gamer.com.tw

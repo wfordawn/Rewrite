@@ -1,0 +1,12 @@
+#!name=ForceInstallTF
+#!desc=ForceInstallTF
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/ForceInstallTF.jpg
+#!tag=ddgksf2013
+#!author=@Skyxim
+#!version=2022-03-12
+
+[Script]
+http-response ^https:\/\/testflight\.apple\.com((\/v3\/accounts\/.+?\/apps$)|(\/v2\/accounts\/.+?\/apps\/.+?\/builds\/.+)) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/ForceInstall.js, requires-body=true, timeout=60, tag=ForceInstall
+
+[MITM]
+hostname = testflight.apple.com

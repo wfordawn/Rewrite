@@ -1,0 +1,22 @@
+#!name=YouTube去广告
+#!desc=贴片广告/首页瀑布流/播放页推荐/搜索页/短视频，附 PIP 与后台播放
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/youtube.png
+#!tag=app2smile
+#!author=@app2smile, @ddgksf2013
+#!version=2025-04-15
+
+[Rewrite]
+# > 视频广告请求
+(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject-200
+# > 通用广告请求
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject-200
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject-200
+
+[Script]
+# > 贴片/瀑布流/搜索/播放页/短视频（协议级）
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=60, tag=youtube-proto
+
+[MITM]
+hostname = -redirector*.googlevideo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com

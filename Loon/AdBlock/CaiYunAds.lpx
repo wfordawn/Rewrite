@@ -1,0 +1,35 @@
+#!name=彩云天气净化
+#!desc=如果有需要的去除广告的APP，可自行在共享表格中添加需求
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/CaiYunAds.jpg
+#!tag=ddgksf2013
+#!author=@ddgksf2013
+#!version=2024-09-27
+
+[Rewrite]
+^https?:\/\/ad\.cyapi\.cn\/v\d - reject-200
+
+[Script]
+http-response ^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/biz\.cyapi\.cn\/v\d\/user script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/api\.caiyunapp\.com\/v\d\/activity script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+http-response ^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/caiyun_json.js, requires-body=true, timeout=60, tag=caiyun_json
+
+[MITM]
+hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
