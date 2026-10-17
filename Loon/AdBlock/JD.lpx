@@ -1,0 +1,19 @@
+#!name=京东去广告
+#!desc=移除京东开屏广告，精简我的页面产品推广
+#!icon=https://wfordawn.github.io/Rewrite/icons/apps/JD.png
+#!tag=去广告
+#!author=@RuCu6, @Maasea
+#!version=2026-10-02
+
+[Rule]
+URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
+
+[Rewrite]
+request if ${url} ~= /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06])/i then reject_dict(200)
+response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig/i then response.json.replace(["data.JDMessage.socketmonitor.isSocketEstablishedAhead", "data.JDMessage.socketmonitor.isSocketReport", "data.JDHttpToolKit.httpdns.httpdns"], [0, 0, 0])
+
+[Script]
+response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)/i then script("https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/jd-ads.js") with tag="移除京东广告", requires_body=true
+
+[MITM]
+hostname = api.m.jd.com

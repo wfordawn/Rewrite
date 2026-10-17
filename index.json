@@ -2,7 +2,7 @@
   "author": "ddgksf2013",
   "upstream": "https://github.com/ddgksf2013/Rewrite",
   "format": "Loon plugin (.lpx)",
-  "count": 67,
+  "count": 69,
   "plugins": [
     {
       "name": "开屏广告拦截合集",
@@ -1241,6 +1241,46 @@
         "MITM(1)"
       ],
       "scripts": 0,
+      "external": []
+    },
+    {
+      "name": "淘宝去广告",
+      "desc": "过滤淘宝开屏广告与推荐位广告",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Taobao.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Taobao.png",
+      "tag": "去广告",
+      "author": "@RuCu6",
+      "versionDate": "2026-10-02",
+      "size": 2559,
+      "iconSource": "kelee",
+      "sections": [
+        "Rule(6)",
+        "Rewrite(11)",
+        "Script(2)",
+        "MITM(1)"
+      ],
+      "scripts": 2,
+      "external": []
+    },
+    {
+      "name": "京东去广告",
+      "desc": "移除京东开屏广告，精简我的页面产品推广",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/JD.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/JD.png",
+      "tag": "去广告",
+      "author": "@RuCu6, @Maasea",
+      "versionDate": "2026-10-02",
+      "size": 1089,
+      "iconSource": "kelee",
+      "sections": [
+        "Rule(1)",
+        "Rewrite(2)",
+        "Script(1)",
+        "MITM(1)"
+      ],
+      "scripts": 1,
       "external": []
     }
   ]
