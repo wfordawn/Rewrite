@@ -2,7 +2,7 @@
   "author": "ddgksf2013",
   "upstream": "https://github.com/ddgksf2013/Rewrite",
   "format": "Loon plugin (.lpx)",
-  "count": 66,
+  "count": 67,
   "plugins": [
     {
       "name": "开屏广告拦截合集",
@@ -1222,6 +1222,25 @@
         "MITM(1)"
       ],
       "scripts": 3,
+      "external": []
+    },
+    {
+      "name": "优酷视频去广告",
+      "desc": "移除开屏/视频/信息流广告（其余广告请求已加密无法移除）",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/Youku.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/Youku.png",
+      "tag": "去广告",
+      "author": "luestr, @RuCu6",
+      "versionDate": "2026-10-02",
+      "size": 1469,
+      "iconSource": "kelee",
+      "sections": [
+        "Rule(22)",
+        "Rewrite(2)",
+        "MITM(1)"
+      ],
+      "scripts": 0,
       "external": []
     }
   ]
