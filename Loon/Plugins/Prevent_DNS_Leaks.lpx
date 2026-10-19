@@ -1,5 +1,4 @@
 #!name=DNS防泄露
-# 引用链接: https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx
 #!desc=专为小白设计的DNS防泄露
 #!openUrl=
 #!author=非正常人类研究中心
@@ -7,8 +6,8 @@
 #!system=
 #!system_version=
 #!loon_version=3.5.1(998)
-#!homepage=https://hub.kelee.one
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/Prevent_DNS_Leaks.png
+#!homepage=https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
+#!icon=https://raw.githubusercontent.com/wfordawn/Rewrite/master/docs/icons/apps/Prevent_DNS_Leaks.png
 #!date=2026-10-02 13:57:49
 
 
