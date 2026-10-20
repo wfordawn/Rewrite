@@ -3,7 +3,7 @@
 #!icon=https://wfordawn.github.io/Rewrite/icons/apps/WeiboAds.jpg
 #!tag=ddgksf2013
 #!author=@ddgksf2013
-#!version=2026-10-19
+#!version=2026-10-20
 
 [Rule]
 DOMAIN,sdkapp.uve.weibo.com,DIRECT
@@ -20,6 +20,7 @@ DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 ^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload - reject-dict
 ^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser - reject-dict
 ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime - reject-200
+^https?:\/\/boot.*weibo\.com\/v\d\/ad\/preload - reject-dict
 ^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo - reject-dict
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily - reject-dict
 ^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
@@ -33,8 +34,6 @@ DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_detail script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 
 http-response ^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
-
-http-response ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/preload script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 
 http-response ^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 
