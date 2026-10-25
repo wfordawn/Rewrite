@@ -1,0 +1,11 @@
+#!name=APNs 直连
+#!desc=让 Apple 推送服务（APNs）绕过代理直连，改善国内环境下 iOS 通知延迟、丢推送
+#!author=@wfordawn
+#!tag=网络
+#!icon=https://raw.githubusercontent.com/wfordawn/Rewrite/master/docs/icons/apps/generic.png
+#!date=2026-10-25
+
+[Rule]
+DOMAIN-SUFFIX,push.apple.com,DIRECT
+DOMAIN-SUFFIX,courier.push.apple.com,DIRECT
+IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
