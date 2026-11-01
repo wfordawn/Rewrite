@@ -8,10 +8,10 @@
 #!loon_version=3.5.1(998)
 #!homepage=https://wfordawn.github.io/Rewrite/
 #!icon=https://raw.githubusercontent.com/wfordawn/Rewrite/master/docs/icons/apps/OKXAds.png
-#!date=2026-11-01 12:02:00
+#!date=2026-11-01 12:10:00
 
 [Rewrite]
-response if ${url} ~= /^https:\/\/www\.okx\.com\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then script("https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/okx-ads.js") with tag="移除OKX运营卡片", requires_body=true
+request if ${url} ~= /^https:\/\/www\.okx\.com\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200, '{"code":0,"msg":"","error_code":"0","error_message":"","detailMsg":"","data":{"cards":[]}}')
 
 [MITM]
 hostname = www.okx.com, app.okx.com, www.okx.cab
