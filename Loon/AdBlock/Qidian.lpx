@@ -1,15 +1,45 @@
-#!name=起点去广告
-#!desc=开屏/每日导读/发现页弹窗/书架活动悬浮
-#!icon=https://wfordawn.github.io/Rewrite/icons/apps/qidian.png
-#!tag=app2smile
-#!author=@app2smile
+#!name=起点读书去广告
+#!desc=移除起点读书开屏广告、每日导读、各类弹窗、文末广告、搜索填充词，精简我的页面。
+#!tag=去广告
+#!system=
+#!system_version=
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png
+#!date=2026-10-02 13:57:49
 
-#   目前支持:
-#       开屏页广告,每日导读去除(需全新应用),冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,
-#       去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
+[Rewrite]
+response if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$/i then response.json.replace(["Data.WolfEye", "Data.CloudSetting.TeenShowFreq"], [0, 0])
 
-[Mitm]
-hostname = magev6.if.qidian.com
+response if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$/i then response.json.delete(["Data.ActivityPageBackPushNoticeFrequency", "Data.ActivityIcon", "Data.ActivityPopup", "Data.LuckBag"])
 
-[Script]
-http-response ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/(deeplink\/geturl|dailyrecommend\/getdailyrecommend)|v1\/(client\/getconf$|bookshelf\/getHoverAdv|adv\/getadvlistbatch\?positions=iOS_tab)) script-path=https://raw.githubusercontent.com/wfordawn/Rewrite/master/Loon/Scripts/qidian.js, requires-body=true, timeout=10, tag=起点json
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v4\/client\/getsplashscreen\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\//i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/ywab\.reader\.qq\.com\/user\/experiments\/v2\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/checkin\/simpleinfo\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/push\/getdialog\?/i then reject_dict(200)
+
+response if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/dailyrecommend\/getdailyrecommend\?/i then response.json.replace("Data.Items", "[]")
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/message\/getpushedmessagelist$/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/maintain\/playstrip$/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/dailyrecommend\/recommendBook\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/freshman\/bookshelfbtn$/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation$/i then reject_dict(200)
+
+response if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v3\/user\/getaccountpage\?/i then response.json.delete("Data.BenefitButtonList")
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/booksearch\/hotWords\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe\/showChapterEndModule\?/i then reject_dict(200)
+
+request if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/young\/getconf$/i then reject_dict(200)
+
+[MitM]
+hostname=magev6.if.qidian.com, ywab.reader.qq.com
