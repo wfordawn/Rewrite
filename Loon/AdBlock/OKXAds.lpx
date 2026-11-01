@@ -14,4 +14,4 @@
 request if ${url} ~= /^https:\/\/www\.okx\.(com|ac|cab)\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200)
 
 [MITM]
-hostname = www.okx.ac, www.okx.cab
+hostname = www.okx.com, www.okx.ac, www.okx.cab
