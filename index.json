@@ -2,7 +2,7 @@
   "author": "ddgksf2013",
   "upstream": "https://github.com/ddgksf2013/Rewrite",
   "format": "Loon plugin (.lpx)",
-  "count": 69,
+  "count": 70,
   "plugins": [
     {
       "name": "开屏广告拦截合集",
@@ -1282,6 +1282,19 @@
       ],
       "scripts": 1,
       "external": []
+    },
+    {
+      "name": "OKX欧易去广告",
+      "desc": "移除 OKX App 首页运营卡片、活动推广与拉新弹窗，保留行情与资产功能",
+      "category": "AdBlock",
+      "file": "Loon/AdBlock/OKXAds.lpx",
+      "icon": "https://wfordawn.github.io/Rewrite/icons/apps/OKXAds.png",
+      "tag": "wfordawn",
+      "size": 772,
+      "sections": [
+        "Rewrite(1)",
+        "Script(1)"
+      ]
     }
   ]
 }
