@@ -13,5 +13,6 @@
 [Rewrite]
 request if ${url} ~= /^https:\/\/www\.okx\.com\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200)
 
+
 [MITM]
 hostname = www.okx.com, app.okx.com, www.okx.cab
