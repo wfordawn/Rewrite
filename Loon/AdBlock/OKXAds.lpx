@@ -11,6 +11,8 @@
 #!date=2026-11-01 12:10:00
 
 [Rewrite]
+response if ${url} ~= /^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$/i then response.json.replace(["Data.WolfEye", "Data.CloudSetting.TeenShowFreq"], [0, 0])
+
 request if ${url} ~= /^https:\/\/www\.okx\.com\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200, '{"code":0,"msg":"","error_code":"0","error_message":"","detailMsg":"","data":{"cards":[]}}')
 
 [MITM]
