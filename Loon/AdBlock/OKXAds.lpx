@@ -1,5 +1,6 @@
 #!name=OKX欧易去广告
 #!desc=移除 OKX App 首页运营卡片、活动推广与拉新弹窗，保留行情与资产功能
+#!openUrl=https://apps.apple.com/app/okx-buy-bitcoin-crypto/id1327268470
 #!author=wfordawn
 #!tag=去广告
 #!system=
@@ -7,11 +8,10 @@
 #!loon_version=3.5.1(998)
 #!homepage=https://wfordawn.github.io/Rewrite/
 #!icon=https://raw.githubusercontent.com/wfordawn/Rewrite/master/docs/icons/apps/OKXAds.png
-#!date=2026-11-01 12:24:00
+#!date=2026-11-01 12:29:00
 
 [Rewrite]
-request if ${url} ~= /^https:\/\/[^\/]+\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200)
-
+request if ${url} ~= /^https:\/\/www\.okx\.(com|ac|cab)\/priapi\/v3\/growth\/mobile\/card\/pro\/home-page/i then reject_dict(200)
 
 [MITM]
-hostname = *.okx.com, *.okx.ac, *.okx.cab, okx.com, okx.ac, okx.cab
+hostname = www.okx.com, www.okx.ac, www.okx.cab
